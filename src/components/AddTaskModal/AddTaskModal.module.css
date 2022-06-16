@@ -58,3 +58,18 @@
     height: 100%;
     background: rgba(51, 51, 51, 0.37);
 }
+
+@media (max-width: 480px) {
+    .AddTaskModal-Wrapper {
+        padding: 20px;
+        width: 340px;
+        justify-content: center;
+    }
+
+    .AddTaskModal-Input,
+    .AddTaskModal-Select,
+    .AddTaskModal-Button {
+        width: 280px;
+        margin-bottom: 20px;
+    }
+}
