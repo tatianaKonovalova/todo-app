@@ -1,6 +1,6 @@
 import { ITodo } from "src/types/todoType";
 
-export const getFiltersData = (todos: ITodo[]) => {
+export const useFiltersData = (todos: ITodo[]) => {
     const categoryTotal = todos.reduce((accum, currentValue) => {
         accum[currentValue.category] = (accum[currentValue.category] || 0) + 1;
         return accum;

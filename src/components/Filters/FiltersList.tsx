@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { ITodo } from "src/types/todoType";
-import { getFiltersData } from "src/helpers/getFiltersData";
+import { useFiltersData } from "src/hooks/useFiltersData";
 
 import FiltersListItem from "src/components/Filters/FiltersListItem/FiltersListItem";
 
@@ -15,7 +15,7 @@ interface Props {
 
 const FiltersList: FC<Props> = ({ todos, filterByCategory, categories }) => {
 
-    const { categoryTotal, getCompleted } = getFiltersData(todos);
+    const { categoryTotal, getCompleted } = useFiltersData(todos);
 
     return (
         <div className={styles["FiltersList-Wrapper"]}>

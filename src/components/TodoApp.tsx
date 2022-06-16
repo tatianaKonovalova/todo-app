@@ -1,7 +1,8 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { ITodo } from "src/types/todoType";
 import { defaultCategories } from "src/constant/defaultCategories";
+import { useLocalStorage } from "src/hooks/useLocalStorage";
 
 import Header from "src/components/Header/Header";
 import FiltersList from "src/components/Filters/FiltersList";
@@ -10,42 +11,17 @@ import AddTaskBtn from "src/components/AddTaskBtn/AddTaskBtn";
 
 import styles from "src/components/TodoApp.module.css";
 
-const todosList = [
-  {
-    id: 1,
-    text: "Buy some milk",
-    category: "shopping",
-    isDone: false,
-    isImportant: false,
-  },
-  {
-    id: 2,
-    text: "Finish React course",
-    category: "study",
-    isDone: false,
-    isImportant: false,
-  },
-  {
-    id: 3,
-    text: "Finish React course",
-    category: "home",
-    isDone: false,
-    isImportant: false,
-  },
-  {
-    id: 4,
-    text: "Finish React course",
-    category: "office",
-    isDone: false,
-    isImportant: false,
-  },
-]
-
 export const TodoApp: FC = () => {
+
+  const { todosList, setTodosToLocalStorage } = useLocalStorage();
 
   const [todos, setTodos] = useState<ITodo[]>(todosList);
   const [filter, setFilter] = useState("");
   const [categories, setCategories] = useState(defaultCategories);
+
+  useEffect(() => {
+    setTodosToLocalStorage(todos);
+  }, [todos]);
 
   const addNewTodoItem = (todoText: string, category: string) => {
     setTodos((todos) => [
