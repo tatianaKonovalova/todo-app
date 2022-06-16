@@ -1,0 +1,36 @@
+.FiltersList-Item {
+    width: 100px;
+    height: 60px;
+    padding: 6px;
+    border-radius: 5px;
+    margin-right: 10px;
+    list-style: none;
+    box-shadow: 4px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.FiltersList-Item div:first-child {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.FiltersListItem-ProgressBar {
+    margin: 6px 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--light-grey);
+}
+
+.FiltersListItem-ProgressBar_Progress {
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.5s ease-in;
+}
+
+.Bold {
+    font-weight: 500;
+}

@@ -1,0 +1,1 @@
+export const defaultCategories = ["shopping", "office", "home", "study"];

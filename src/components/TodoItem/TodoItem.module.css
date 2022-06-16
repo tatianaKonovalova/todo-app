@@ -1,0 +1,74 @@
+.TodoItem-Wrapper {
+    margin-top: 6px;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: 2px;
+    box-shadow: 4px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.TodoItem-Wrapper::before {
+    content: "";
+    display: block;
+    width: 1.5px;
+    height: 42px;
+    background-color: var(--accent-color);
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+}
+
+.TodoItem-TextBlock_Text {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.TodoItem-TextBlock_Category {
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.TodoItem-Done {
+    text-decoration: line-through 1px;
+}
+
+.TodoItem-TextBlock svg {
+    margin-left: 12px;
+}
+
+.TodoItem-TextBlock svg path {
+    fill: var(--accent-color);
+}
+
+.TodoItem-IconBlock {
+    margin-left: auto;
+    display: flex;
+    cursor: pointer;
+}
+
+.TodoItem-IconBlock_Icon {
+    margin-right: 6px;
+    transform: translateX(70px);
+    transition: all 0.5s ease;
+}
+
+.TodoItem-IconBlock_Icon:last-child {
+    margin-right: 0;
+    transition: all 0.7s ease;
+}
+
+.TodoItem-Wrapper:hover .TodoItem-IconBlock_Icon {
+    transform: translateX(-10px);
+}
+
+.TodoItem-IconBlock svg path {
+    fill: var(--main-color);
+}

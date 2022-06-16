@@ -1,0 +1,25 @@
+.FiltersList-Wrapper {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FiltersList {
+    margin: 0;
+    padding: 5px 10px 10px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    overflow-x: auto;
+}
+
+.FiltersList::-webkit-scrollbar {
+    height: 2px;
+}
+
+.FiltersList::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 2px;
+    border-left: 70px solid var(--accent-color);
+}
