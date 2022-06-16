@@ -1,20 +1,31 @@
 import { ITodo } from "src/types/todoType";
 
+import { defaultCategories } from "src/constant/defaultCategories";
+
 export const useLocalStorage = () => {
     const todos = localStorage.getItem("todos");
-    let data: ITodo[];
+    let todosList: ITodo[];
     if (todos) {
-        data = JSON.parse(todos);
+        todosList = JSON.parse(todos);
     } else {
-        data = [];
+        todosList = [];
     }
 
-    const setTodosToLocalStorage = (todos: ITodo[]) => {
-        localStorage.setItem("todos", JSON.stringify(todos));
+    const categories = localStorage.getItem("categories");
+    let categoriesList: string[];
+    if (categories) {
+        categoriesList = JSON.parse(categories);
+    } else {
+        categoriesList = defaultCategories;
+    }
+
+    const setItemsToLocalStorage = (key: string, items: string[] | ITodo[]) => {
+        localStorage.setItem(key, JSON.stringify(items));
     };
 
     return {
-        todosList: data,
-        setTodosToLocalStorage
+        categoriesList,
+        todosList,
+        setItemsToLocalStorage
     }
 };

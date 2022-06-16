@@ -1,4 +1,5 @@
 .FiltersList-Wrapper {
+    width: 100%;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
@@ -8,10 +9,17 @@
 .FiltersList {
     margin: 0;
     padding: 5px 10px 10px;
+    width: 100%;
+    min-width: 200px;
     display: flex;
     align-items: center;
     list-style-type: none;
     overflow-x: auto;
+}
+
+.FiltersList-Total {
+    padding: 5px 10px 10px;
+    border-left: 2px solid var(--accent-color);
 }
 
 .FiltersList::-webkit-scrollbar {

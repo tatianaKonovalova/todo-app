@@ -31,12 +31,14 @@ const FiltersList: FC<Props> = ({ todos, filterByCategory, categories }) => {
                     />
                 })}
             </ul>
-            <FiltersListItem
-                category="total"
-                total={todos.length}
-                completed={todos.filter(todo => todo.isDone === true).length}
-                filterByCategory={() => filterByCategory("total")}
-            />
+            <div className={styles["FiltersList-Total"]}>
+                <FiltersListItem
+                    category="total"
+                    total={todos.length}
+                    completed={todos.filter(todo => todo.isDone === true).length}
+                    filterByCategory={() => filterByCategory("total")}
+                />
+            </div>
         </div>
     )
 }
